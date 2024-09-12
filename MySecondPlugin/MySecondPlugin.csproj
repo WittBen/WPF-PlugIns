@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyPluginInterface\MyPluginInterface.csproj" />
+    <ProjectReference Include="..\MyWpfApp\MyWpfApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MySecondPluginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+	<Target Name="CopyMyFirstPluginToPluginsFolder" AfterTargets="Build">
+		<Copy SourceFiles="$(TargetDir)MySecondPlugin.dll"
+			  DestinationFolder="C:\Users\BenjaminWitt\Documents\_TestArea\WPF generic PluginSystem\MyWpfApp\bin\Debug\net8.0-windows\Plugins" />
+	</Target>
+
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyWpfApp\MyWpfApp.csproj" />
+  </ItemGroup>
+
+	<Target Name="CopyMyFirstPluginToPluginsFolder" AfterTargets="Build">
+		<Copy SourceFiles="$(TargetDir)MyFirstPlugin.dll" DestinationFolder="C:\Users\BenjaminWitt\Documents\_TestArea\WPF generic PluginSystem\MyWpfApp\bin\Debug\net8.0-windows\Plugins" />
+	</Target>
+
+</Project>
