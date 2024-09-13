@@ -1,4 +1,4 @@
-﻿using Autofac;
+using Autofac;
 using EventAggregator;
 using EventAggregator.Interfaces;
 using MyPluginInterface;
@@ -15,7 +15,6 @@ namespace MyWpfApp
   public partial class App : Application
   {
     private IContainer _container;
-
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -35,8 +34,6 @@ namespace MyWpfApp
       var mainWindow = _container.Resolve<MainView>();
       mainWindow.Show();
     }
-
-
 
     private void LoadPlugins(ContainerBuilder builder)
     {
@@ -75,9 +72,5 @@ namespace MyWpfApp
         }
       }
     }
-
-
-
-
   }
 }
