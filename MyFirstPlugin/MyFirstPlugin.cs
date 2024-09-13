@@ -1,4 +1,4 @@
-﻿using MyFirstPlugin.ViewModels;
+using MyFirstPlugin.ViewModels;
 using MyFirstPlugin.Views;
 using MyPluginInterface;
 
@@ -12,12 +12,12 @@ namespace MyFirstPlugin
     {
             typeof(MyPluginView),
             typeof(MyPlugin1View)
-        };
+    };
 
     public IEnumerable<Type> ViewModelTypes => new List<Type>
     {
             typeof(MyPluginViewModel),
             typeof(MyPlugin1ViewModel)
-        };
+    };
   }
 }
